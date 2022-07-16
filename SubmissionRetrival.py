@@ -30,7 +30,7 @@ def return_extension(prog_lang):
 
 
 username=str(sys.argv[1])
-submissions=requests.get('https://codeforces.com/api/user.status?handle='+username+'&from=1&count=10')
+submissions=requests.get('https://codeforces.com/api/user.status?handle='+username)
 submissions_json=json.loads(submissions.text)
 for sub in submissions_json['result']:
 	if sub['verdict'] == 'OK' and 'contestId' in sub.keys():
